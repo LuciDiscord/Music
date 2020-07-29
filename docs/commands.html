@@ -68,7 +68,18 @@ License: MIT
 							<td>Pauses the current song that is playing</td>
 							</tr>
 							<tr>
-							<td>play</td>
+<td>
+    <script>
+      function play() {
+        var audio = document.getElementById("audio");
+        audio.play();
+      }
+    </script>
+
+    <input type="button" value="PLAY" onclick="play()">
+	    <audio id="audio" src="http://dev.interactive-creation-works.net/1/1.ogg"></audio>
+									
+							</td>
 							<td>Play a song from title or URL</td>
 							</tr>
 							<tr>
