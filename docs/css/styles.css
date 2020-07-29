@@ -181,7 +181,7 @@ tr:nth-of-type(odd) {
 }
 
 #developers {
-	background-image: url("../GIFs/code_background.gif")
+	background-color: "#aefAEF"
 }
 
 nav ul li a:hover {
@@ -194,15 +194,15 @@ nav ul li a:hover {
 }
 
 .code {
-	background-image: url("../GIFs/git_background.gif")
+	background-color: "#aefAEF"
 }
 
 #developers {
-	background-image: url("../GIFs/code_background.gif")
+	background-color: "#aefAEF"
 }
 
 #git {
-	background-image: url("../media/git_background.gif");
+	background-color: "FacD3a";
 	background-repeat: no-repeat;
 }
 
