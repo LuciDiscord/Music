@@ -11,7 +11,9 @@ exports.run = async (client, message, args) => {
 
     const track = await client.player.skip(message.guild.id);
 
-    //Message
-    message.channel.send(`Song ${track.name} skipped ${emotes.success}`);
-
+     const emb = new Discord.MessageEmbed()
+    .setColor("RED")
+    .setDescription(`Song ${track.name} skipped ${emotes.success}`)
+    .setTimestamp()
+    message.channel.send(emb);
 }

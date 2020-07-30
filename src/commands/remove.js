@@ -9,15 +9,9 @@ exports.run = async (client, message, args) => {
     //If there's no music
     if(!client.player.isPlaying(message.guild.id)) return message.channel.send(`No music playing on this server ${emotes.error}`);
 
-    const song = await client.player.nowPlaying(message.guild.id);
-
+    const track = await client.player.remove(message.guild.id);
 
     //Message
-   const emb = new Discord.MessageEmbed()
-	.setDescription(`Currently playing ${song.name} ${emotes.music}`)
-	.addField(`Progression`,` [${client.player.createProgressBar(message.guild.id)}]`, false)
-        .setTimestamp()
-	.setColor("GREEN")
-	message.channel.send(emb)
-}
+    message.channel.send(`Song ${track.name} removed ${emotes.success}`);
 
+}

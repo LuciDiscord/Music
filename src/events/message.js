@@ -1,16 +1,12 @@
-const config = require(`../config/bot.json`)
-
 module.exports = (client, message) => {
-
-    //Ignore all bots
+   //Ignore all bots
     if (message.author.bot) return;
 
     //Prefix
-    let prefix = process.env.PREFIX
-
+    let prefix = process.env.PREFIX;
     //Ignore messages not starting with the prefix (in config.json)
-    if (message.content.indexOf(prefix) !== 0) return;
-  
+
+     if (!message.content.toLowerCase().startsWith(prefix)) return;
     //Our standard argument/command name definition.
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
@@ -23,5 +19,5 @@ module.exports = (client, message) => {
   
     //Run the command
     cmd.run(client, message, args);
-    console.log(message.author.id + " ran the command " + cmd.name + " with args " + args);
+    console.log(message.author.id + " ran the command " + command + " with args " + args);
 };

@@ -4,5 +4,7 @@ const BOATS = require('boats.js');
 const Boats = new BOATS(process.env.BOATAPI);
 
 exports.run = async (client, message, args) => {
-	message.channel.send(`:ping_pong: Pong!\n|| Websockets: ${client.ws.ping}ms ||`)
+	const EMBED = new Discord.MessageEmbed()
+		.setTitle(message.author.id + ` Avatar`, message.author.avatarURL)
+		.setImage(message.author
 }

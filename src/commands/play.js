@@ -11,7 +11,7 @@ exports.run = async (client, message, args) => {
 
     const aTrackIsAlreadyPlaying = client.player.isPlaying(message.guild.id);
 
-        // If there's already a track playing 
+        // If there's already a track playing
         if(aTrackIsAlreadyPlaying){
 
             // Add the track to the queue
@@ -21,7 +21,10 @@ exports.run = async (client, message, args) => {
             if(result.type === 'playlist'){
                 message.channel.send(`${result.tracks.length} songs added to the queue ${emotes.music}`);
             } else {
-                message.channel.send(`${result.name} added to the queue ${emotes.music}`);
+		const emb = new Discord.MessageEmbed()
+			.setDescription(`${result.name} added to the queue ${emotes.music}`)
+			.setTimestamp()
+			message.channel.send(emb)
             }
 
         } else {
@@ -33,7 +36,10 @@ exports.run = async (client, message, args) => {
             if(result.type === 'playlist'){
                 message.channel.send(`${result.tracks.length} songs added to the queue ${emotes.music}\nCurrently playing ${result.tracks[0].name} !`);
             } else {
-                message.channel.send(`Currently playing ${result.name} ${emotes.music}`);
+		const embd = new Discord.MessageEmbed()
+		.setDescription(`Currently playing ${result.name} ${emotes.music}`)
+		.setTimestamp()
+                message.channel.send(embd);
             }
 
             const queue = client.player.getQueue(message.guild.id)
@@ -43,7 +49,10 @@ exports.run = async (client, message, args) => {
                 message.channel.send(`There is no more music in the queue ${emotes.error}`);
             })
             .on('trackChanged', (oldTrack, newTrack) => {
-                message.channel.send(`Now playing ${newTrack.name} ... ${emotes.music}`);
+		const emsb = new Discord.MessageEmbed()
+                .setDescription(`Now playing ${newTrack.name} ... ${emotes.music}`)
+		.setTimestamp()
+		message.channel.send(emsb).then(m => m.delete({timeout: 5000}));
             })
             .on('channelEmpty', () => {
                 message.channel.send(`Stop playing, there is no more member in the voice channel ${emotes.error}`);

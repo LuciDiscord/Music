@@ -9,6 +9,7 @@ Boats.getVoted(client.user.id, message.author.id).then((voted) => {
 	message.reply("Yes! you have voted!")
 	} else {
 	   message.reply(`Nope, You haven't voted. Please do so at: https://discord.boats/bot/${client.user.id}/vote`);
-})
+}
     console.log(voted);
+})
 }

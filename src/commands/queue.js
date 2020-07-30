@@ -13,11 +13,13 @@ exports.run = async (client, message, args) => {
     if(!queue) return message.channel.send(`No songs currently playing ${emotes.error}`);
 
     //Message
-    message.channel.send(`**Server queue ${emotes.queue}**\nCurrent - ${queue.playing.name} | ${queue.playing.author}\n`+
+    const emb = new Discord.MessageEmbed()
+	.setDescription(`**Server queue ${emotes.queue}**\nCurrent - ${queue.playing.name} | ${queue.playing.author}\n`)
+	.setTimestamp()
+	message.channel.send(emb)
     (
         queue.tracks.map((track, i) => {
             return `#${i+1} - ${track.name} | ${track.author}`
         }).join('\n')
-    ));
-
+    );
 }
