@@ -19,7 +19,9 @@
     "math-expression-evaluator": "^1.2.22",
     "moment": "^2.27.0",
     "moment-duration-format": "^2.3.2",
+    "quick.db": "^7.1.1",
     "snekfetch": "^4.0.4",
+    "super-fetch": "0.0.2",
     "url": "^0.11.0"
   }
 }
