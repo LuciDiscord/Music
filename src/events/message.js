@@ -8,9 +8,13 @@ module.exports = async (client, message) =>{
     if (message.author.bot) return;
 
     //Prefix
+/*
     let prefix = await db.fetch(`prefix_${message.guild.id}`)
 	if (!prefix) prefix = process.env.PREFIX;
-    //Ignore messages not starting with the prefix (in config.json)
+*/
+		let prefix = process.env.PREFIX;
+
+  //Ignore messages not starting with the prefix (in config.json)
      if (mentions.includes(message.content)) {
 	if (message.channel.type === "dm") return ("Sorry, commands don't work here");
 	message.channel.send(`If you forgot my prefix for this server, its \`${prefix}\``);

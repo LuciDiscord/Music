@@ -13,7 +13,7 @@ const manager = new ShardingManager('./index.js', {
     // https://discord.js.org/#/docs/main/v11/class/ShardingManager
 
     // 'auto' handles shard count automatically
-    totalShards: 2,
+    totalShards: 1,
     // your bot token
     token: process.env.TOKEN
 });

@@ -12,6 +12,7 @@
     "@discordjs/opus": "^0.3.2",
     "boats.js": "^2.4.0",
     "common-tags": "^1.8.0",
+    "discord-giveaways": "git+https://github.com/Xynnix/giveaways.git",
     "discord-player": "github:Androz2091/discord-player#develop",
     "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
@@ -20,6 +21,7 @@
     "moment": "^2.27.0",
     "moment-duration-format": "^2.3.2",
     "quick.db": "^7.1.1",
+    "quickmongo": "^1.0.8",
     "snekfetch": "^4.0.4",
     "super-fetch": "0.0.2",
     "url": "^0.11.0"
