@@ -10,18 +10,18 @@ exports.run = async (client, message, args) => {
     if(!client.player.isPlaying(message.guild.id)) return message.channel.send(`No music playing on this server ${emotes.error}`);
 
     //Args
-    if(!args[0]) return message.channel.send(`Please enter a number ${emotes.error}`);
+    if(!args[0]) return message.channel.send(`Please enter a number [1-150]${emotes.error}`);
 
     //Security modification
-    if(isNaN(args[0])) return message.channel.send(`Please enter a valid number ${emotes.error}`);
-    if(100 < args[0])  return message.channel.send(`Please enter a valid number ${emotes.error}`)
-    if(args[0] <=0) return message.channel.send(`Please enter a valid number ${emotes.error}`)
+    if(isNaN(args[0])) return message.channel.send(`Please enter a valid number [1-150]${emotes.error}`);
+    if(150 < args[0])  return message.channel.send(`Please enter a valid number [1-150]${emotes.error}`)
+    if(args[0] <=0) return message.channel.send(`Please enter a valid number [1-150]${emotes.error}`)
 
     //Cannot put (-), (+), (,) or (.)
-    if(message.content.includes("-")) return message.channel.send(`Please enter a valid number ${emotes.error}`)
-    if(message.content.includes("+")) return message.channel.send(`Please enter a valid number ${emotes.error}`)
-    if(message.content.includes(",")) return message.channel.send(`Please enter a valid number ${emotes.error}`)
-    if(message.content.includes(".")) return message.channel.send(`Please enter a valid number ${emotes.error}`)
+    if(message.content.includes("-")) return message.channel.send(`Please enter a valid number [1-150]${emotes.error}`)
+    if(message.content.includes("+")) return message.channel.send(`Please enter a valid number [1-150]${emotes.error}`)
+    if(message.content.includes(",")) return message.channel.send(`Please enter a valid number [1-150]${emotes.error}`)
+    if(message.content.includes(".")) return message.channel.send(`Please enter a valid number [1-150]${emotes.error}`)
 
     //Set volume
     client.player.setVolume(message.guild.id, parseInt(args.join(" ")));

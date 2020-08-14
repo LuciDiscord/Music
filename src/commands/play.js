@@ -14,8 +14,8 @@ exports.run = async (client, message, args) => {
         // If there's already a track playing
         if(aTrackIsAlreadyPlaying){
 
-            // Add the track to the queue
-            const result = await client.player.addToQueue(message.guild.id, args[0]);
+              // Add the track to the queue
+            const result = await client.player.addToQueue(message.guild.id, args.join(" "));
             if(!result) return message.channel.send(`This song provider is not supported...`);
 
             if(result.type === 'playlist'){
@@ -41,7 +41,7 @@ exports.run = async (client, message, args) => {
 		.setTimestamp()
                 message.channel.send(embd);
             }
-
+6
             const queue = client.player.getQueue(message.guild.id)
 
             //Events

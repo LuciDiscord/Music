@@ -1,7 +1,7 @@
 const fetch = require("super-fetch");
 const Discord = require("discord.js");
 const talkedRecently = new Set();
-const db = require('quick.db');
+// const db = require('quick.db');
 const mentions = ["<@626771394063237138>", "<@!626771394063237138"];
 module.exports = async (client, message) =>{
    //Ignore all bot
@@ -23,9 +23,10 @@ module.exports = async (client, message) =>{
     //Our standard argument/command name definition.
     const args = message.content.slice(prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
+    const filts = require("../config/cmd.json");
+    if (filts.includes(command)) return message.channel.send("If you are trying to use a filter, please use the `flist` command to see the proper usage")
     //Grab the command data from the client.commands Enmap
     const cmd = client.commands.get(command);
-  
     //If that command doesn't exist, silently exit and do nothing
     if (!cmd) return;
     //Run the command

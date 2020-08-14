@@ -4,6 +4,11 @@ const fs = require('fs');
 //The bot connects using the .env file
 const dotenv = require('dotenv');
 dotenv.config();
+//=======================÷÷========================
+//const express = require('express');
+//const siteInit = require('./dashboard/main.js')
+// Initalize Express
+//siteInit.run('a', 'b', 'c');
 
 const { Database } = require("quickmongo");
 const db = new Database(process.env.MongoDB)
@@ -97,6 +102,17 @@ fs.readdir("./commands/", (_err, files) => {
     });
 });
 
-// Login
 
+// Dashboard package
+/*
+const Dashboard = require("discord-bot-dashboard");
+const dashboard = new Dashboard(client, {
+    port: 6969,
+    clientSecret: process.env.Secret,
+    redirectURI: process.env.Redirect
+  })
+client.on('ready', () => {
+  dashboard.run()
+});
+*/
 client.login(process.env.BOT_TOKEN);
