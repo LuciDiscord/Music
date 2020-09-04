@@ -20,6 +20,7 @@
     "dotenv": "^8.2.0",
     "enmap": "^5.6.1",
     "express": "^4.17.1",
+    "ffmpeg": "0.0.4",
     "got": "^11.5.1",
     "math-expression-evaluator": "^1.2.22",
     "moment": "^2.27.0",
