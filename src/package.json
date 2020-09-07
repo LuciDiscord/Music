@@ -13,6 +13,7 @@
     "boats.js": "^2.4.0",
     "btoa": "^1.2.1",
     "common-tags": "^1.8.0",
+    "dblapi.js": "^2.4.1",
     "discord-bot-dashboard": "^0.2.0",
     "discord-giveaways": "git+https://github.com/Xynnix/giveaways.git",
     "discord-player": "github:Androz2091/discord-player#develop",

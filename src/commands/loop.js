@@ -29,5 +29,4 @@ exports.run = async (client, message, args) => {
         return message.channel.send(`Repeat mode enabled ${emotes.success}`);
 
     }
-    
 }

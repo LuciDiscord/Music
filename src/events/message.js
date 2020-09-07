@@ -44,7 +44,7 @@ webhookClient.send('Command Monitor', {
 	avatarURL: 'https://i.imgur.com/wSTFkRM.png',
  	embeds: [embed],
 })
-            message.channel.send("Wait 1.5 seconds before using commands again. - " + message.author.username);
+            message.channel.send("Wait 3 seconds before using commands again. - " + message.author.username);
     } else {
               cmd.run(client, message, args)
       console.log(message.author.id + " ran the command " + command + " with args " + args)
@@ -53,6 +53,6 @@ webhookClient.send('Command Monitor', {
         setTimeout(() => {
           // Removes the user from the set after a minute
           talkedRecently.delete(message.author.id);
-        }, 1500);
+        }, 3000);
     }
 }

@@ -1,3 +1,4 @@
 zips/
 src/node_modules
 .env
+src/config.json

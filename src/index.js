@@ -4,11 +4,18 @@ const fs = require('fs');
 //The bot connects using the .env file
 const dotenv = require('dotenv');
 dotenv.config();
-//=======================÷÷========================
-//const express = require('express');
-//const siteInit = require('./dashboard/main.js')
-// Initalize Express
-//siteInit.run('a', 'b', 'c');
+
+const DBL = require("dblapi.js");
+const dbl = new DBL(process.env.DBL, client);
+client.DBL;
+
+dbl.on('posted', () => {
+  console.log('Server count posted!');
+})
+
+dbl.on('error', e => {
+ console.log(`Oops! ${e}`);
+})
 
 const { Database } = require("quickmongo");
 const db = new Database(process.env.MongoDB)
